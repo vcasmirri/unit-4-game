@@ -1,9 +1,34 @@
 img {
     height: 10em;
     margin: .1em;
+    cursor: -webkit-grab;
+    cursor: grab;
+    transition: filter 1s;
+}
+
+img:hover {
+    filter: drop-shadow(0 0 30px #333);
 }
 
 body {
     background-image: url(../images/rockywall.png);
     background-repeat: repeat;
+}
+
+.card {
+    box-shadow: 10px 10px 5px grey;
+}
+
+.jumbotron, p {
+    font-family: 'Amarante', cursive;
+}
+
+p {
+    font-size: 20px;
+}
+
+.jumbotron {
+    background-color: #4aaaa5;
+    border-bottom: 3px grey;
+    color: white;
 }

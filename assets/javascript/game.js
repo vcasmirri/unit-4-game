@@ -6,12 +6,8 @@ var lossCount = 0;
 $("#wins").text("Wins: " + winCount);
 $("#losses").text("Losses: " + lossCount);
 
-// Variables to check if crystal values are unique
+// Variable to check if crystal values are unique
 var unique = [];
-var isUnique = false;
-
-// Variable for function that checks if game is winnable
-var canWin = true;
 
 // Stores image sources for crystals
 var crystalArray = ["assets/images/crystal1.png", "assets/images/crystal2.png", "assets/images/crystal3.png", "assets/images/crystal4.png"]
