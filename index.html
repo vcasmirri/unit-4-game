@@ -6,10 +6,12 @@
     <link rel="stylesheet" href="assets/css/reset.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body>
+
+    <div id="bodyWrapper">
 
     <div class="jumbotron">
         <h1 class="text-center">Crystal Collector</h1>
@@ -21,22 +23,37 @@
         <div class="row">
 
             <!-- Goal Value & Current Value -->
-            <div class="col-lg-3">
-                <div class
+            <div class="col-lg-2">
+                <div class="card" id="goalCard">
+                        <div class="card-body">
+                            <p id="goal"></p>
+                            <p id="current"></p>
+                        </div>
+                </div>
             </div>
 
+            <!-- Crystals -->
+            <div class="col-lg-8 text-center">
+                <div class="row">
+                    <div class="col-12" id="crystals"></div>
+                </div>
+            </div>
 
-
-
-
-
-
-
-
-
-
+            <!-- Wins/Losses -->
+            <div class="col-lg-2">
+                <div class="card" id="winLossCard">
+                    <div class="card-body">
+                        <p id="wins"></p>
+                        <p id="losses"></p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
+
+</div>
+
+<script src="assets/javascript/game.js"></script>
 
 </body>
 

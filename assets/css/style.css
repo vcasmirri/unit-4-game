@@ -1,0 +1,9 @@
+img {
+    height: 10em;
+    margin: .1em;
+}
+
+body {
+    background-image: url(../images/rockywall.png);
+    background-repeat: repeat;
+}
