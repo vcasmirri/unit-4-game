@@ -6,7 +6,9 @@ var lossCount = 0;
 $("#wins").text("Wins: " + winCount);
 $("#losses").text("Losses: " + lossCount);
 
-// Empty array to check for crystal value uniqueness
+// Variables to check if crystal values are unique
+var unique = [];
+var isUnique = false;
 
 // Stores image sources for crystals
 var crystalArray = ["assets/images/crystal1.png", "assets/images/crystal2.png", "assets/images/crystal3.png", "assets/images/crystal4.png"]
@@ -20,7 +22,32 @@ for (var i = 0; i < crystalArray.length; i++) {
     crystalImage.addClass("crystal");
     crystalImage.attr("src", crystalArray[i]);
     crystalImage.attr("data-crystalvalue", Math.floor((Math.random() * 12) +1));
+    console.log(crystalImage.attr("data-crystalvalue"));
     $("#crystals").append(crystalImage);
+    unique.push(crystalImage);
+}
+
+// Defines function that checks for duplicate crystal values
+
+function hasDuplicates(array) {
+    var valuesSoFar = [];
+    for (var j = 0; j < array.length; ++j) {
+        var value = array[j].attr("data-crystalvalue");
+        if (valuesSoFar.indexOf(value) !== -1) {
+            return true;
+        }
+        valuesSoFar.push(value);
+    }
+    return false;
+}
+console.log("Are there duplicate crystal values? " + hasDuplicates(unique));
+
+// If there are duplicate crystal values, create a new set of crystals
+
+if ((hasDuplicates(unique)) == true) {
+    $("#crystals").empty();
+    unique = [];
+    crystalValues();
 }
 }
 
