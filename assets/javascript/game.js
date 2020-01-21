@@ -45,23 +45,7 @@ function hasDuplicates(array) {
 }
 console.log("Are there duplicate crystal values? " + hasDuplicates(unique));
 
-// Defines functions that check if game is winnable
-
-var isEven = unique.every(function (e) {
-    return e.attr("data-crystalvalue") % 2 == 0;
-});
-console.log("Are all the crystal values even?" + isEven); // false
-
-// var oddGoal =function isEven(value) {
-// 	if (value%2 == 0)
-// 		return true;
-// 	else
-// 		return false;
-// }
-
-// console.log("Is the goal value odd?" + )
-
-// If there are duplicate crystal values or if game is unwinnable, create a new set of crystals
+// If there are duplicate crystal values, create a new set of crystals
 
 if ((hasDuplicates(unique)) == true) {
     $("#crystals").empty();
@@ -78,9 +62,34 @@ var currentValue = 0;
 $("#current").text("My score: " + currentValue);
 
 var goalValue = Math.floor((Math.random() * (120-19) + 19));
-$("#goal").text("Goal : " + goalValue);
+$("#goal").text("Goal: " + goalValue);
 console.log ("The current goal is " + goalValue);
 
+// Checks if all crystal values are even and if game is winnable
+
+var isEven = unique.every(function (e) {
+    return e.attr("data-crystalvalue") % 2 == 0;
+});
+console.log("Are all the crystal values even? " + isEven);
+
+function isOdd(value) {
+	if (value%2 == 0)
+		return false;
+	else
+		return true;
+}
+
+console.log("Is the goal value odd? " + isOdd(goalValue));
+
+// If game is not winnable, reset the goal value
+
+if ((isEven == true) && ((isOdd(goalValue)) == true)) {
+    goalValue = Math.floor((Math.random() * (120-19) + 19));
+    $("#goal").text("Goal: " + goalValue);
+    console.log ("The current goal has been reset to " + goalValue);
+}
+
+// Defines on-click function for crystals
 
 $(".crystal").on("click", function() {
     
