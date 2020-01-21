@@ -6,8 +6,10 @@ var lossCount = 0;
 $("#wins").text("Wins: " + winCount);
 $("#losses").text("Losses: " + lossCount);
 
+// Empty array to check for crystal value uniqueness
+
 // Stores image sources for crystals
-var crystalArray = ["assets/images/purple_crystal.jpg", "assets/images/blue_crystal.jpg", "assets/images/green_crystal.jpg", "assets/images/pink_crystal.jpg"]
+var crystalArray = ["assets/images/crystal1.png", "assets/images/crystal2.png", "assets/images/crystal3.png", "assets/images/crystal4.png"]
 
 // Generates crystals on page and assigns random values to each.
 
