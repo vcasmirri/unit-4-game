@@ -10,6 +10,9 @@ $("#losses").text("Losses: " + lossCount);
 var unique = [];
 var isUnique = false;
 
+// Variable for function that checks if game is winnable
+var canWin = true;
+
 // Stores image sources for crystals
 var crystalArray = ["assets/images/crystal1.png", "assets/images/crystal2.png", "assets/images/crystal3.png", "assets/images/crystal4.png"]
 
@@ -42,7 +45,23 @@ function hasDuplicates(array) {
 }
 console.log("Are there duplicate crystal values? " + hasDuplicates(unique));
 
-// If there are duplicate crystal values, create a new set of crystals
+// Defines functions that check if game is winnable
+
+var isEven = unique.every(function (e) {
+    return e.attr("data-crystalvalue") % 2 == 0;
+});
+console.log("Are all the crystal values even?" + isEven); // false
+
+// var oddGoal =function isEven(value) {
+// 	if (value%2 == 0)
+// 		return true;
+// 	else
+// 		return false;
+// }
+
+// console.log("Is the goal value odd?" + )
+
+// If there are duplicate crystal values or if game is unwinnable, create a new set of crystals
 
 if ((hasDuplicates(unique)) == true) {
     $("#crystals").empty();
