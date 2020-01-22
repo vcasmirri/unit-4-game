@@ -102,6 +102,7 @@ $(".crystal").on("click", function() {
 
     if (currentValue === goalValue) {
         winCount++;
+        alert("You won!");
         $("#wins").text("Wins: " + winCount);
         $("#crystals").empty();
         crystalValues();
@@ -112,6 +113,7 @@ $(".crystal").on("click", function() {
 
     else if (currentValue >= goalValue) {
         lossCount++;
+        alert("You lost!");
         $("#losses").text("Losses: " + lossCount);
         $("#crystals").empty();
         crystalValues();
